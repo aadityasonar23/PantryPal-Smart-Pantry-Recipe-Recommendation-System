@@ -1,0 +1,21 @@
+{
+  "name": "pantrypal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "frontend": "npm --prefix frontend run dev",
+  "backend": "backend\\venv\\Scripts\\python.exe backend\\app.py",
+  "open": "wait-on http://localhost:8000 && start http://localhost:8000",
+  "both": "concurrently -n FRONTEND,BACKEND,BROWSER -c blue,green,yellow \"npm run frontend\" \"npm run backend\" \"npm run open\""
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "concurrently": "^10.0.5",
+    "open-cli": "^9.0.0",
+    "wait-on": "^9.1.0"
+  }
+}
