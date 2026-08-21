@@ -1,7 +1,7 @@
 const API_URL = 'https://pantrypal-api-9hse.onrender.com';
 
 export async function getIngredients() {
-  const response = await fetch(`${API_URL}/ingredients/`);
+  const response = await fetch(`${API_URL}/api/ingredients/`);
 
   if (!response.ok) {
     throw new Error('Failed to fetch ingredients');
@@ -11,7 +11,7 @@ export async function getIngredients() {
 }
 
 export async function getPantry() {
-  const response = await fetch(`${API_URL}/pantry/`);
+  const response = await fetch(`${API_URL}/api/pantry/`);
 
   if (!response.ok) {
     throw new Error('Failed to fetch pantry');
@@ -21,7 +21,7 @@ export async function getPantry() {
 }
 
 export async function addPantryItem(data) {
-  const response = await fetch(`${API_URL}/pantry/`, {
+  const response = await fetch(`${API_URL}/api/pantry/`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ export async function addPantryItem(data) {
 }
 
 export async function matchRecipes(ingredientIds) {
-  const response = await fetch(`${API_URL}/match-recipes/`, {
+  const response = await fetch(`${API_URL}/api/match-recipes/`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ export async function matchRecipes(ingredientIds) {
 }
 
 export async function deletePantryItem(id) {
-  const response = await fetch(`${API_URL}/pantry/${id}`, {
+  const response = await fetch(`${API_URL}/api/pantry/${id}`, {
     method: 'DELETE',
   });
 
@@ -67,7 +67,7 @@ export async function deletePantryItem(id) {
 }
 
 export async function getRecipes() {
-  const response = await fetch(`${API_URL}/recipes/`);
+  const response = await fetch(`${API_URL}/api/recipes/`);
 
   if (!response.ok) {
     throw new Error('Failed to fetch recipes');
@@ -77,7 +77,7 @@ export async function getRecipes() {
 }
 
 export async function getRecipeById(id) {
-  const response = await fetch(`${API_URL}/recipes/${id}`);
+  const response = await fetch(`${API_URL}/api/recipes/${id}`);
 
   if (!response.ok) {
     throw new Error('Failed to fetch recipe');
