@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://pantrypal-api-9hse.onrender.com';
 
 export async function getIngredients() {
   const response = await fetch(`${API_URL}/ingredients/`);
